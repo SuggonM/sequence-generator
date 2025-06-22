@@ -1,7 +1,7 @@
 {
 	"name": "sequence-gen",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Iterate through character sets using \"principle of shortest length\"",
 	"main": "index.js",
 	"scripts": {
