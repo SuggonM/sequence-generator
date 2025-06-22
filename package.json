@@ -1,5 +1,5 @@
 {
-	"name": "sequence-generator",
+	"name": "sequence-gen",
 	"type": "module",
 	"version": "1.0.0",
 	"description": "Iterate through character sets using \"principle of shortest length\"",

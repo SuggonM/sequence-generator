@@ -11,6 +11,11 @@ This can be useful for cases where you need a sequence of unique alphanumeric st
 
 The generator is 100% [lazy](https://github.com/tc39/proposal-iterator-helpers#why-not-use-arrayfrom--arrayprototype-methods) (~~just like me~~), thus no memory is allocated to store the entire sequence. It simply yields the immediate next value without having to memorize past or future values.
 
+## Installation
+```bash
+npm install sequence-gen
+```
+
 ## Simple Usage
 The package is an [ES6 class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) with the following exports:
 - `Sequence`: The class itself; used for generator [fine-tuning](#advanced-usage)
