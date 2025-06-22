@@ -38,18 +38,18 @@ Further examples can be found in [#Advanced Usage](#advanced-usage).
 
 ## Math Details
 To calculate the number of "combinations" (well mathematically, it's a [different term](https://www.statskingdom.com/combinations-calculator.html#:~:text=Permutations%20with%0Arepetitions%20formula)) for a fixed character length:
-$$
-\text{Combinations} = n^r
-$$
+```math
+Combinations = n^r
+```
 where, $n$ = no. of characters in a cycle, and $r$ = length of the string
 
 But since the string length is increasing, we find the ***total*** of all combinations:
-$$
+```math
 \sum^R_{r=1} n^r = n^1 + n^2 + n^3 + \ldots + n^R
-$$
+```
 
 Visualizing the above formula to find iterator size for different `maxLength`s:
-```yaml
+```lua
                      62^1 = 62       <= maxLength: 1
               62^1 + 62^2 = 3906     <= maxLength: 2
        62^1 + 62^2 + 62^3 = 242234   <= maxLength: 3
