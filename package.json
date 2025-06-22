@@ -1,0 +1,24 @@
+{
+	"name": "sequence-generator",
+	"version": "1.0.0",
+	"description": "Iterate through character sets using \"principle of shortest length\"",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SuggonM/sequence-generator.git"
+	},
+	"keywords": [
+		"sequence",
+		"generator",
+		"id-generator"
+	],
+	"author": "SuggonM",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SuggonM/sequence-generator/issues"
+	},
+	"homepage": "https://github.com/SuggonM/sequence-generator#readme"
+}
