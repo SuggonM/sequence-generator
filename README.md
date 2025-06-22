@@ -1,9 +1,10 @@
 # sequence-generator
 Iterate through character sets using "principle of shortest length"
 
-This is a simple generator that yields alphanumeric strings `[0-9a-zA-Z]` in an increasing order of length, meaning it will yield all combinations of characters for a given length before moving on to the next length.
+This is a simple generator that yields alphanumeric strings `[0-9a-zA-Z]` in a progressively increasing order of length, meaning it will yield all combinations of characters for a given length before moving on to the next length.
+![first 60 lines of script output for sample letters a,b,c,d,e – which is similar to using "permutation with repetition" in mathematics](https://github.com/SuggonM/sequence-generator/raw/main/sample-iteration-list.png)
 
-The algorithm was inspired by css `@counter-style` ([demo here](https://codepen.io/Suggon/pen/pvJxpmx)), and same pattern can also be found in JS minifiers that convert the variable names into shortest length.
+The algorithm was inspired by css `@counter-style` ([codepen demo](https://codepen.io/Suggon/pen/pvJxpmx)), and similar patterns can also be found in JS minifiers that convert the variable names into shortest length.
 
 This can be useful for cases where you need a sequence of unique alphanumeric strings, and order matters. One example is assigning short IDs (identifiers) to each entity. Another use case is in the command line, where the size of a command cannot exceed `8191` characters[^1].
 
@@ -17,7 +18,7 @@ npm install sequence-gen
 ```
 
 ## Simple Usage
-The package is an [ES6 class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) with the following exports:
+The package is an [ES6 class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) with following exports:
 - `Sequence`: The class itself; used for generator [fine-tuning](#advanced-usage)
 - `sequence`: A readymade generator function created with default options
 	- `minLength`: Minimum character length to generate; default is `1`
@@ -42,18 +43,18 @@ const threeCharSequence = sequence({ minLength: 3, maxLength: 3 });
 Further examples can be found in [#Advanced Usage](#advanced-usage).
 
 ## Math Details
-To calculate the number of "combinations" (well mathematically, it's a [different term](https://www.statskingdom.com/combinations-calculator.html#:~:text=Permutations%20with%0Arepetitions%20formula)) for a fixed character length:
+To calculate the number of "combinations" (well mathematically, *it's a [different term](https://www.statskingdom.com/combinations-calculator.html#:~:text=Permutations%20with%0Arepetitions%20formula)*) for a fixed character length:
 ```math
 Combinations = n^r
 ```
-where, $n$ = no. of characters in a cycle, and $r$ = length of the string
+where, $n$ = no. of characters in a cycle, and $r$ = length of the string.
 
-But since the string length is increasing, we find the ***total*** of all combinations:
+But since the script's algorithm yields strings of *progressively* increasing length, we instead find the ***total*** of all combinations:
 ```math
 \sum^R_{r=1} n^r = n^1 + n^2 + n^3 + \ldots + n^R
 ```
 
-Visualizing the above formula to find iterator size for different `maxLength`s:
+Visualizing the above formula to find max iterator size for different `maxLength`s:
 ```lua
                      62^1 = 62       <= maxLength: 1
               62^1 + 62^2 = 3906     <= maxLength: 2
@@ -63,7 +64,7 @@ and so on...
 ```
 (`62` is the number of characters in the default character set)
 
-Thus as far as size efficiency goes, one shouldn't need a character `maxLength` greater than `3` for most practical applications. Again, that wouldn't make much difference since the default `maxLength` is `Infinity` anyway.
+Thus as far as size efficiency goes, one shouldn't need a character `maxLength` greater than `3` for most practical applications. And even if one *does* enter a higher size, it will barely have any impact since the intended default `maxLength` is already `Infinity`.
 
 ## Advanced Usage
 ### Customizing Character Set
