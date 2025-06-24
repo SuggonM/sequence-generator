@@ -44,5 +44,5 @@ class Sequence {
 }
 
 const seq = new Sequence();
-export default seq.sequence;
+export default seq.sequence.bind(seq);
 export { Sequence };
