@@ -1,5 +1,5 @@
-class Sequence {
-	*numbers () {
+export class Sequence {
+	*digits () {
 		for (const i of Array(10).keys()) {
 			yield i;
 		}
@@ -15,7 +15,7 @@ class Sequence {
 		}
 	}
 	*charSet() {
-		yield* this.numbers();
+		yield* this.digits();
 		yield* this.lowers();
 		yield* this.uppers();
 	}
@@ -45,4 +45,3 @@ class Sequence {
 
 const seq = new Sequence();
 export default seq.sequence.bind(seq);
-export { Sequence };

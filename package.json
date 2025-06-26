@@ -1,9 +1,10 @@
 {
 	"name": "sequence-gen",
 	"type": "module",
-	"version": "1.0.2",
-	"description": "Iterate through character sets using \"principle of shortest length\"",
+	"version": "1.1.1",
+	"description": "Progressively generate character combinations from a given charset",
 	"main": "index.js",
+	"types": "index.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -14,7 +15,9 @@
 	"keywords": [
 		"sequence",
 		"generator",
-		"id-generator"
+		"id-generator",
+		"combination-generator",
+		"permutation"
 	],
 	"author": "SuggonM",
 	"license": "MIT",
